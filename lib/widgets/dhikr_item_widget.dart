@@ -17,12 +17,13 @@ class DhikrItemWidget extends StatelessWidget {
           child: Column(
             children: [
               Padding(
-                padding: const EdgeInsets.only(top: 5.0, bottom: 25.0),
+                padding: const EdgeInsets.only(top: 10.0, bottom: 35.0),
                 child: Text(
                   'Ayat Kursi (Dibaca 1x)'.toUpperCase(),
                   textAlign: TextAlign.center,
                   style: GoogleFonts.openSans(
                     fontWeight: FontWeight.bold,
+                    fontSize: 15.0,
                   ),
                 ),
               ),

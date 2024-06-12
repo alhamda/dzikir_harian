@@ -1,5 +1,5 @@
-import 'package:dzikir_harian/screens/dhikr_screen.dart';
 import 'package:dzikir_harian/cubits/setting_cubit.dart';
+import 'package:dzikir_harian/screens/home_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
@@ -33,7 +33,7 @@ class DhikrApp extends StatelessWidget {
         primarySwatch: Colors.teal,
         useMaterial3: false,
       ),
-      home: const DhikrScreen(),
+      home: const HomeScreen(),
     );
   }
 }
