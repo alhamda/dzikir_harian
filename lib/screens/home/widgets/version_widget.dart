@@ -1,5 +1,4 @@
 import 'package:dzikir_harian/screens/about/about_screen.dart';
-import 'package:dzikir_harian/screens/dhikr/dhikr_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 

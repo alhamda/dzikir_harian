@@ -1,3 +1,4 @@
+import 'package:dzikir_harian/models/dhikr_model.dart';
 import 'package:flutter/material.dart';
 import 'package:dzikir_harian/cubits/setting_cubit.dart';
 import 'package:dzikir_harian/screens/dhikr/widgets/dhikr_item_widget.dart';
@@ -6,7 +7,9 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:google_fonts/google_fonts.dart';
 
 class DhikrScreen extends StatefulWidget {
-  const DhikrScreen({super.key});
+  final String title;
+  final List<DhikrModel> data;
+  const DhikrScreen({super.key, required this.title, required this.data});
 
   @override
   State<DhikrScreen> createState() => _DhikrScreenState();
@@ -23,7 +26,7 @@ class _DhikrScreenState extends State<DhikrScreen>
   void initState() {
     super.initState();
     _pageViewController = PageController();
-    _tabController = TabController(length: 3, vsync: this);
+    _tabController = TabController(length: widget.data.length, vsync: this);
   }
 
   void _toggleSetting() {
@@ -58,12 +61,9 @@ class _DhikrScreenState extends State<DhikrScreen>
                         _currentPageIndex = index;
                       });
                     },
-                    children: const [
-                      DhikrItemWidget(),
-                      DhikrItemWidget(),
-                      DhikrItemWidget(),
-                      DhikrItemWidget(),
-                    ],
+                    children: widget.data
+                        .map((item) => DhikrItemWidget(dhikr: item))
+                        .toList(),
                   ),
                 ),
                 _footerNav(),
@@ -83,7 +83,7 @@ class _DhikrScreenState extends State<DhikrScreen>
       foregroundColor: Colors.black,
       backgroundColor: Colors.white,
       title: Text(
-        _showSetting ? 'Ukuran Huruf' : 'Dzikir Pagi',
+        _showSetting ? 'Ukuran Huruf' : widget.title,
         style: GoogleFonts.inter(
           fontWeight: FontWeight.w600,
         ),
@@ -146,7 +146,9 @@ class _DhikrScreenState extends State<DhikrScreen>
           children: [
             ClipOval(
               child: Material(
-                color: Colors.green.withOpacity(0.1),
+                color: _currentPageIndex > 0
+                    ? Colors.green.withOpacity(0.1)
+                    : Colors.grey.withOpacity(0.1),
                 child: InkWell(
                   onTap: _currentPageIndex > 0
                       ? () {
@@ -165,15 +167,17 @@ class _DhikrScreenState extends State<DhikrScreen>
             ),
             Expanded(
                 child: Text(
-              '${_currentPageIndex + 1} dari 4',
+              '${_currentPageIndex + 1} dari ${widget.data.length}',
               textAlign: TextAlign.center,
               style: GoogleFonts.openSans(),
             )),
             ClipOval(
               child: Material(
-                color: Colors.green.withOpacity(0.1),
+                color: _currentPageIndex < widget.data.length - 1
+                    ? Colors.green.withOpacity(0.1)
+                    : Colors.grey.withOpacity(0.1),
                 child: InkWell(
-                  onTap: _currentPageIndex < 3
+                  onTap: _currentPageIndex < widget.data.length - 1
                       ? () {
                           _pageViewController.nextPage(
                             duration: const Duration(milliseconds: 300),

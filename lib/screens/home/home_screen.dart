@@ -1,3 +1,4 @@
+import 'package:dzikir_harian/data/dhikr_morning_data.dart';
 import 'package:dzikir_harian/screens/dhikr/dhikr_screen.dart';
 import 'package:dzikir_harian/screens/home/widgets/action_button_widget.dart';
 import 'package:dzikir_harian/screens/home/widgets/version_widget.dart';
@@ -62,7 +63,10 @@ class HomeScreen extends StatelessWidget {
                           onTap: () => Navigator.push(
                             context,
                             MaterialPageRoute(
-                              builder: (context) => const DhikrScreen(),
+                              builder: (context) => DhikrScreen(
+                                title: 'Dzikir Pagi',
+                                data: dhikrMorningData,
+                              ),
                             ),
                           ),
                           title: 'Dzikir Pagi',
@@ -74,7 +78,10 @@ class HomeScreen extends StatelessWidget {
                           onTap: () => Navigator.push(
                             context,
                             MaterialPageRoute(
-                              builder: (context) => const DhikrScreen(),
+                              builder: (context) => DhikrScreen(
+                                title: 'Dzikir Petang',
+                                data: dhikrMorningData,
+                              ),
                             ),
                           ),
                           title: 'Dzikir Petang',
