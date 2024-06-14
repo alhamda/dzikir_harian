@@ -48,7 +48,6 @@ class _DhikrScreenState extends State<DhikrScreen>
         elevation: _showSetting ? 0 : 0,
         foregroundColor: Colors.black,
         backgroundColor: Colors.white,
-        titleSpacing: 0,
         title: Text(
           _showSetting ? 'Ukuran Huruf' : 'Dzikir Pagi',
           style: const TextStyle(

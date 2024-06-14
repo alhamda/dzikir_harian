@@ -9,15 +9,14 @@ void main() {
 
   SystemChrome.setSystemUIOverlayStyle(
     const SystemUiOverlayStyle(
-      statusBarColor: Colors.white, // Warna status bar
-      statusBarIconBrightness:
-          Brightness.dark, // Ikon status bar (misalnya, teks) gelap
+      statusBarColor: Colors.white,
+      statusBarIconBrightness: Brightness.dark,
     ),
   );
 
   runApp(
     BlocProvider(
-      create: (context) => SettingCubit(),
+      create: (context) => SettingCubit()..init(),
       child: const DhikrApp(),
     ),
   );
@@ -30,7 +29,7 @@ class DhikrApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
-      title: 'Dzikir Pagi dan Petang',
+      title: 'Dzikir Pagi Petang',
       theme: ThemeData(
         sliderTheme: SliderThemeData(
           thumbColor: Colors.green.shade300,
