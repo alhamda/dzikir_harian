@@ -12,7 +12,7 @@ class SettingWidget extends StatelessWidget {
     final SettingCubit settingCubit = context.watch<SettingCubit>();
 
     return Container(
-      decoration: BoxDecoration(color: Colors.teal.shade400, boxShadow: [
+      decoration: BoxDecoration(color: Colors.white, boxShadow: [
         BoxShadow(
           color: Colors.grey.withOpacity(0.5),
           blurRadius: 5,
@@ -24,7 +24,7 @@ class SettingWidget extends StatelessWidget {
         curve: Curves.fastOutSlowIn,
         child: SizedBox(
           width: double.infinity,
-          height: isVisible ? 255 : 0,
+          height: isVisible ? 250 : 0,
           child: isVisible
               ? Padding(
                   padding: const EdgeInsets.fromLTRB(0, 12.0, 0, 10.0),
@@ -36,8 +36,7 @@ class SettingWidget extends StatelessWidget {
                         child: Text(
                           'Arab',
                           style: GoogleFonts.inter(
-                            color: Colors.white,
-                            fontSize: 15.0,
+                            fontSize: 14.0,
                           ),
                         ),
                       ),
@@ -56,8 +55,7 @@ class SettingWidget extends StatelessWidget {
                         child: Text(
                           'Latin',
                           style: GoogleFonts.inter(
-                            color: Colors.white,
-                            fontSize: 15.0,
+                            fontSize: 14.0,
                           ),
                         ),
                       ),
@@ -76,8 +74,7 @@ class SettingWidget extends StatelessWidget {
                         child: Text(
                           'Terjemahan',
                           style: GoogleFonts.inter(
-                            color: Colors.white,
-                            fontSize: 15.0,
+                            fontSize: 14.0,
                           ),
                         ),
                       ),

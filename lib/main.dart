@@ -1,9 +1,20 @@
 import 'package:dzikir_harian/cubits/setting_cubit.dart';
-import 'package:dzikir_harian/screens/home_screen.dart';
+import 'package:dzikir_harian/screens/home/home_screen.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
 void main() {
+  WidgetsFlutterBinding.ensureInitialized();
+
+  SystemChrome.setSystemUIOverlayStyle(
+    const SystemUiOverlayStyle(
+      statusBarColor: Colors.white, // Warna status bar
+      statusBarIconBrightness:
+          Brightness.dark, // Ikon status bar (misalnya, teks) gelap
+    ),
+  );
+
   runApp(
     BlocProvider(
       create: (context) => SettingCubit(),
@@ -21,16 +32,13 @@ class DhikrApp extends StatelessWidget {
       debugShowCheckedModeBanner: false,
       title: 'Dzikir Pagi dan Petang',
       theme: ThemeData(
-        appBarTheme: AppBarTheme(
-          backgroundColor: Colors.teal.shade400,
-          elevation: 0,
-        ),
         sliderTheme: SliderThemeData(
-          thumbColor: Colors.amber.shade400,
-          activeTrackColor: Colors.amber.shade400,
-          inactiveTrackColor: Colors.teal.shade500,
+          thumbColor: Colors.green.shade300,
+          overlayColor: Colors.green.withOpacity(0.3),
+          inactiveTrackColor: Colors.green.shade50,
+          activeTrackColor: Colors.green.shade100,
         ),
-        primarySwatch: Colors.teal,
+        primarySwatch: Colors.green,
         useMaterial3: false,
       ),
       home: const HomeScreen(),

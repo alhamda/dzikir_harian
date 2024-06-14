@@ -55,6 +55,7 @@ class DhikrItemWidget extends StatelessWidget {
                 style: GoogleFonts.openSans(
                   fontSize: settingCubit.state.latinFontSize,
                   fontStyle: FontStyle.italic,
+                  height: 1.5,
                 ),
               ),
             ],
@@ -77,6 +78,7 @@ class DhikrItemWidget extends StatelessWidget {
                 'Allah tidak ada Ilah (yang berhak diibadahi) melainkan Dia Yang Hidup Kekal lagi terus menerus mengurus (makhluk-Nya); tidak mengantuk dan tidak tidur. Kepunyaan-Nya apa yang ada di langit dan di bumi. Tidak ada yang dapat memberi syafa’at di sisi Allah tanpa izin-Nya. Allah mengetahui apa-apa yang (berada) dihadapan mereka, dan dibelakang mereka dan mereka tidak mengetahui apa-apa dari Ilmu Allah melainkan apa yang dikehendaki-Nya. Kursi Allah meliputi langit dan bumi. Dan Allah tidak merasa berat memelihara keduanya, Allah Mahatinggi lagi Mahabesar.',
                 style: GoogleFonts.openSans(
                   fontSize: settingCubit.state.terjemahanFontSize,
+                  height: 1.5,
                 ),
               ),
             ],
