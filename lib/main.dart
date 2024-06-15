@@ -1,5 +1,6 @@
 import 'package:dzikir_harian/cubits/setting_cubit.dart';
 import 'package:dzikir_harian/screens/home/home_screen.dart';
+import 'package:dzikir_harian/screens/splash/splash_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
@@ -12,6 +13,8 @@ void main() {
     const SystemUiOverlayStyle(
       statusBarColor: Colors.white,
       statusBarIconBrightness: Brightness.dark,
+      systemNavigationBarColor: Colors.white,
+      systemNavigationBarIconBrightness: Brightness.dark,
     ),
   );
 
@@ -50,7 +53,7 @@ class DhikrApp extends StatelessWidget {
         GlobalWidgetsLocalizations.delegate,
         GlobalCupertinoLocalizations.delegate,
       ],
-      home: const HomeScreen(),
+      home: const SplashScreen(),
     );
   }
 }

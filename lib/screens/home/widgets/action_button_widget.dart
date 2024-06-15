@@ -65,7 +65,7 @@ class ActionButtonWidget extends StatelessWidget {
             Icon(
               icon,
               size: 70.0,
-              color: Colors.black.withOpacity(0.07),
+              color: Colors.black.withOpacity(0.15),
             ),
           ],
         ),
