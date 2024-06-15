@@ -11,9 +11,10 @@ class SettingCubit extends Cubit<SettingState> {
     final SharedPreferences prefs = await SharedPreferences.getInstance();
 
     emit(state.copyWith(
-      arabFontSize: prefs.getDouble('arabFontSize'),
+      arabicFontSize: prefs.getDouble('arabicFontSize'),
       latinFontSize: prefs.getDouble('latinFontSize'),
-      terjemahanFontSize: prefs.getDouble('terjemahanFontSize'),
+      translationFontSize: prefs.getDouble('translationFontSize'),
+      sourceFontSize: prefs.getDouble('sourceFontSize'),
     ));
   }
 
@@ -24,11 +25,11 @@ class SettingCubit extends Cubit<SettingState> {
     emit(const SettingState());
   }
 
-  void changeArabFontSize(double value) async {
+  void changeArabicFontSize(double value) async {
     final SharedPreferences prefs = await SharedPreferences.getInstance();
-    prefs.setDouble('arabFontSize', value);
+    prefs.setDouble('arabicFontSize', value);
 
-    emit(state.copyWith(arabFontSize: value));
+    emit(state.copyWith(arabicFontSize: value));
   }
 
   void changeLatinFontSize(double value) async {
@@ -38,10 +39,17 @@ class SettingCubit extends Cubit<SettingState> {
     emit(state.copyWith(latinFontSize: value));
   }
 
-  void changeTerjemahanFontSize(double value) async {
+  void changeTranslationFontSize(double value) async {
     final SharedPreferences prefs = await SharedPreferences.getInstance();
-    prefs.setDouble('terjemahanFontSize', value);
+    prefs.setDouble('translationFontSize', value);
 
-    emit(state.copyWith(terjemahanFontSize: value));
+    emit(state.copyWith(translationFontSize: value));
+  }
+
+  void changeSourceFontSize(double value) async {
+    final SharedPreferences prefs = await SharedPreferences.getInstance();
+    prefs.setDouble('sourceFontSize', value);
+
+    emit(state.copyWith(sourceFontSize: value));
   }
 }

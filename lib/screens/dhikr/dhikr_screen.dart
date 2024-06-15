@@ -169,7 +169,7 @@ class _DhikrScreenState extends State<DhikrScreen>
                 child: Text(
               '${_currentPageIndex + 1} dari ${widget.data.length}',
               textAlign: TextAlign.center,
-              style: GoogleFonts.openSans(),
+              style: GoogleFonts.inter(),
             )),
             ClipOval(
               child: Material(

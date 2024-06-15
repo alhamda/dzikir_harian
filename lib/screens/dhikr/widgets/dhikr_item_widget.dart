@@ -25,7 +25,7 @@ class DhikrItemWidget extends StatelessWidget {
                     Text(
                       dhikr.title.toUpperCase(),
                       textAlign: TextAlign.center,
-                      style: GoogleFonts.openSans(
+                      style: GoogleFonts.inter(
                         fontWeight: FontWeight.bold,
                         fontSize: 16.0,
                       ),
@@ -34,7 +34,7 @@ class DhikrItemWidget extends StatelessWidget {
                     Text(
                       dhikr.description.toUpperCase(),
                       textAlign: TextAlign.center,
-                      style: GoogleFonts.openSans(
+                      style: GoogleFonts.inter(
                         fontWeight: FontWeight.w600,
                         fontSize: 14.0,
                       ),
@@ -45,9 +45,9 @@ class DhikrItemWidget extends StatelessWidget {
               Text(
                 dhikr.arabic,
                 textAlign: TextAlign.right,
-                style: GoogleFonts.openSans(
+                style: GoogleFonts.inter(
                   height: 1.5,
-                  fontSize: settingCubit.state.arabFontSize,
+                  fontSize: settingCubit.state.arabicFontSize,
                 ),
               ),
             ],
@@ -61,14 +61,14 @@ class DhikrItemWidget extends StatelessWidget {
             children: [
               Text(
                 'Latin',
-                style: GoogleFonts.openSans(
+                style: GoogleFonts.inter(
                   fontWeight: FontWeight.bold,
                 ),
               ),
               const SizedBox(height: 10.0),
               Text(
                 dhikr.latin,
-                style: GoogleFonts.openSans(
+                style: GoogleFonts.inter(
                   fontSize: settingCubit.state.latinFontSize,
                   fontStyle: FontStyle.italic,
                   height: 1.5,
@@ -85,15 +85,15 @@ class DhikrItemWidget extends StatelessWidget {
             children: [
               Text(
                 'Terjemahan',
-                style: GoogleFonts.openSans(
+                style: GoogleFonts.inter(
                   fontWeight: FontWeight.bold,
                 ),
               ),
               const SizedBox(height: 10.0),
               Text(
                 dhikr.translation,
-                style: GoogleFonts.openSans(
-                  fontSize: settingCubit.state.terjemahanFontSize,
+                style: GoogleFonts.inter(
+                  fontSize: settingCubit.state.translationFontSize,
                   height: 1.5,
                 ),
               ),
@@ -108,7 +108,7 @@ class DhikrItemWidget extends StatelessWidget {
             children: [
               Text(
                 'Sumber',
-                style: GoogleFonts.openSans(
+                style: GoogleFonts.inter(
                   fontWeight: FontWeight.bold,
                 ),
               ),
@@ -122,7 +122,8 @@ class DhikrItemWidget extends StatelessWidget {
                 itemBuilder: (context, index) {
                   return Text(
                     dhikr.source[index],
-                    style: GoogleFonts.openSans(
+                    style: GoogleFonts.inter(
+                      fontSize: settingCubit.state.sourceFontSize,
                       height: 1.5,
                     ),
                   );

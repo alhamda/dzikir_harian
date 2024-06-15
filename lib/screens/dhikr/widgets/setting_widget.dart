@@ -24,7 +24,7 @@ class SettingWidget extends StatelessWidget {
         curve: Curves.fastOutSlowIn,
         child: SizedBox(
           width: double.infinity,
-          height: isVisible ? 250 : 0,
+          height: isVisible ? 330 : 0,
           child: isVisible
               ? Padding(
                   padding: const EdgeInsets.fromLTRB(0, 12.0, 0, 10.0),
@@ -42,11 +42,11 @@ class SettingWidget extends StatelessWidget {
                       ),
                       const SizedBox(height: 5.0),
                       Slider(
-                        value: settingCubit.state.arabFontSize,
+                        value: settingCubit.state.arabicFontSize,
                         min: 12,
                         max: 50,
                         onChanged: (double value) {
-                          settingCubit.changeArabFontSize(value);
+                          settingCubit.changeArabicFontSize(value);
                         },
                       ),
                       const SizedBox(height: 8.0),
@@ -80,11 +80,30 @@ class SettingWidget extends StatelessWidget {
                       ),
                       const SizedBox(height: 5.0),
                       Slider(
-                        value: settingCubit.state.terjemahanFontSize,
+                        value: settingCubit.state.translationFontSize,
                         min: 12,
                         max: 50,
                         onChanged: (double value) {
-                          settingCubit.changeTerjemahanFontSize(value);
+                          settingCubit.changeTranslationFontSize(value);
+                        },
+                      ),
+                      const SizedBox(height: 8.0),
+                      Padding(
+                        padding: const EdgeInsets.symmetric(horizontal: 15.0),
+                        child: Text(
+                          'Sumber',
+                          style: GoogleFonts.inter(
+                            fontSize: 14.0,
+                          ),
+                        ),
+                      ),
+                      const SizedBox(height: 5.0),
+                      Slider(
+                        value: settingCubit.state.sourceFontSize,
+                        min: 12,
+                        max: 50,
+                        onChanged: (double value) {
+                          settingCubit.changeSourceFontSize(value);
                         },
                       ),
                     ],

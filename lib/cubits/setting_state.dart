@@ -1,28 +1,37 @@
 part of 'setting_cubit.dart';
 
 final class SettingState extends Equatable {
-  final double arabFontSize;
+  final double arabicFontSize;
   final double latinFontSize;
-  final double terjemahanFontSize;
+  final double translationFontSize;
+  final double sourceFontSize;
 
   const SettingState({
-    this.arabFontSize = 27.0,
+    this.arabicFontSize = 27.0,
     this.latinFontSize = 15.0,
-    this.terjemahanFontSize = 15.0,
+    this.translationFontSize = 15.0,
+    this.sourceFontSize = 15.0,
   });
 
   SettingState copyWith({
-    double? arabFontSize,
+    double? arabicFontSize,
     double? latinFontSize,
-    double? terjemahanFontSize,
+    double? translationFontSize,
+    double? sourceFontSize,
   }) {
     return SettingState(
-      arabFontSize: arabFontSize ?? this.arabFontSize,
+      arabicFontSize: arabicFontSize ?? this.arabicFontSize,
       latinFontSize: latinFontSize ?? this.latinFontSize,
-      terjemahanFontSize: terjemahanFontSize ?? this.terjemahanFontSize,
+      translationFontSize: translationFontSize ?? this.translationFontSize,
+      sourceFontSize: sourceFontSize ?? this.sourceFontSize,
     );
   }
 
   @override
-  List<Object> get props => [arabFontSize, latinFontSize, terjemahanFontSize];
+  List<Object> get props => [
+        arabicFontSize,
+        latinFontSize,
+        translationFontSize,
+        sourceFontSize,
+      ];
 }
